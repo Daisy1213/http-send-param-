@@ -57,7 +57,7 @@ describe('post/body', function () {
         request
             .post('/user')
             .send({name: '123'})
-            .expect({name: '123'})
+            .expect({name: '123'}
             .end((err, res) = > {
             if (err) {
                 done.fail(err);
