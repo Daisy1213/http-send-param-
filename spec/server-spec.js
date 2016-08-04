@@ -11,7 +11,7 @@ describe("get/query", function () {
         request
             .get('/query/?name=manny')
             .expect({name: "manny"})
-            .end((err, res) = > {
+            .end((err, res) => {
             if (err) {
                 done.fail(err);
             } else {
@@ -26,7 +26,7 @@ describe('get/params', function () {
         request
             .get('/params/jony')
             .expect({us: 'jony'})
-            .end((err, res) = > {
+            .end((err, res) => {
             if (err) {
                 done.fail(err);
             } else {
@@ -42,7 +42,7 @@ describe('post/header', function () {
             .post('/header')
             .set({name: 'blue'})
             .expect('blue')
-            .end((err, res) = > {
+            .end((err, res) => {
             if (err) {
                 done.fail(err);
             } else {
@@ -57,8 +57,8 @@ describe('post/body', function () {
         request
             .post('/user')
             .send({name: '123'})
-            .expect({name: '123'}
-            .end((err, res) = > {
+            .expect({name: '123'})
+            .end((err, res) => {
             if (err) {
                 done.fail(err);
             } else {
@@ -74,7 +74,7 @@ describe('post/json', function () {
             .post('/json')
             .send({"name": "tj", "pet": "tobi"})
             .expect({"name": "tj", "pet": "tobi"})
-            .end((err, res) = > {
+            .end((err, res) => {
             if (err) {
                 done.fail(err);
             } else {
