@@ -11,13 +11,13 @@ describe("get/query", function () {
         request
             .get('/query/?name=manny')
             .expect({name: "manny"})
-            .end((err, res) => {
-                if (err) {
-                    done.fail(err);
-                } else {
-                    done();
-                }
-            })
+            .end((err, res) = > {
+            if (err) {
+                done.fail(err);
+            } else {
+                done();
+    }
+    })
     });
 });
 
@@ -26,13 +26,13 @@ describe('get/params', function () {
         request
             .get('/params/jony')
             .expect({us: 'jony'})
-            .end((err, res) => {
-                if (err) {
-                    done.fail(err);
-                } else {
-                    done();
-                }
-            })
+            .end((err, res) = > {
+            if (err) {
+                done.fail(err);
+            } else {
+                done();
+    }
+    })
     });
 });
 
@@ -40,14 +40,15 @@ describe('post/header', function () {
     it('should get param by header', function (done) {
         request
             .post('/header')
-            .set({color: 'blue'})
-            .end((err, res) => {
-                if (err) {
-                    done.fail(err);
-                } else {
-                    done();
-                }
-            })
+            .set({name: 'blue'})
+            .expect('blue')
+            .end((err, res) = > {
+            if (err) {
+                done.fail(err);
+            } else {
+                done();
+    }
+    })
     });
 });
 
@@ -56,13 +57,14 @@ describe('post/body', function () {
         request
             .post('/user')
             .send({name: '123'})
-            .end((err, res) => {
-                if (err) {
-                    done.fail(err);
-                } else {
-                    done();
-                }
-            })
+            .expect({name: '123'})
+            .end((err, res) = > {
+            if (err) {
+                done.fail(err);
+            } else {
+                done();
+    }
+    })
     });
 });
 
@@ -71,12 +73,13 @@ describe('post/json', function () {
         request
             .post('/json')
             .send({"name": "tj", "pet": "tobi"})
-            .end((err, res) => {
-                if (err) {
-                    done.fail(err);
-                } else {
-                    done();
-                }
-            })
+            .expect({"name": "tj", "pet": "tobi"})
+            .end((err, res) = > {
+            if (err) {
+                done.fail(err);
+            } else {
+                done();
+    }
+    })
     });
 });
