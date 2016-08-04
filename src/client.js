@@ -20,7 +20,7 @@ request
 
 request
     .post('localhost:3000/header')
-    .set('Content-Type', 'application/json')
+    // .set('Content-Type', 'application/json')
     .set({name: "123"})  //必须设置头字段，如果用send发送的是body主体，服务器端只能通过.body获取参数
     .end((err, res) => {
         if (err || !res.ok) {

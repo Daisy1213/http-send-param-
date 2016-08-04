@@ -36,4 +36,18 @@ describe('get/params', function () {
     });
 });
 
+describe('post/header', function () {
+    it('should get param by header', function (done) {
+        request
+            .post('/header')
+            .set({color: 'blue'})
+            .end((err, res) => {
+                if (err) {
+                    done.fail(err);
+                } else {
+                    done();
+                }
+            })
+    });
+});
 

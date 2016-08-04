@@ -18,7 +18,6 @@ app.get('/params/:us', (req, res) => {
 });
 
 app.post('/header', (req, res) => {
-    console.log(req.get('name'))
     res.send(req.get('name'));
 });
 
