@@ -45,7 +45,7 @@ request
 request
     .post('localhost:3000/json')
     .set('Content-Type', 'application/json')
-    .send('{"name":"tj","pet":"tobi"}')
+    .send({"name":"tj","pet":"tobi"})
     .end((err, res) => {
         if (err || !res.ok) {
             console.log('Oh no! error ' + res.text);
